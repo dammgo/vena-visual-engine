@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+showroom/dist/
+
+# Astro
+.astro/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# TypeScript
+*.tsbuildinfo
+
+# local
+desktop.ini
+
+# vsc 
+*.code-workspace
+
+# obsidian
+.obsidian

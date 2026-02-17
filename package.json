@@ -1,0 +1,47 @@
+{
+  "name": "@dammgo/vena-visual-engine",
+  "version": "0.1.0",
+  "description": "The Sovereign Visual Engine. A rebellion against generic AI-generated interfaces, built for infrastructure longevity.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "license": "MIT",
+  "author": "dammgo labs",
+  "homepage": "https://kr.dammgo.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dammgo/vena-visual-engine"
+  },
+  "keywords": [
+    "css",
+    "visual-engine",
+    "design-system",
+    "sovereignty",
+    "unocss",
+    "tailwind",
+    "dammgo"
+  ],
+  "scripts": {
+    "dev": "unocss",
+    "build": "unocss build && tsc",
+    "showroom:dev": "astro dev --root showroom",
+    "showroom:build": "astro build --root showroom",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "unocss": "^65.0.0"
+  },
+  "devDependencies": {
+    "@unocss/astro": "^65.4.3",
+    "astro": "^5.17.1",
+    "unocss": "^65.4.3",
+    "typescript": "^5.7.3"
+  }
+}

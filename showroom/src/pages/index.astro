@@ -1,0 +1,126 @@
+---
+// D:\OneDrive\code-workspace\dammgo\vena-visual-engine\showroom\src\pages\index.astro
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>VENA Visual Engine | Sovereign Showroom</title>
+	</head>
+	<body class="bg-bos-slate min-h-screen text-bos-white p-12 font-ui selection:bg-bos-pink selection:text-bos-white">
+		
+		<header class="mb-32 flex justify-between items-end border-b border-white/5 pb-12">
+			<div>
+				<h1 class="font-brand font-black text-7xl tracking-tighter mb-4">
+					VENA<span class="text-bos-pink">.</span>VISUAL<span class="text-bos-pink">.</span>ENGINE
+				</h1>
+				<p class="font-mono text-bos-gray tracking-[0.8em] text-[10px] uppercase">
+					The Sovereign Visual Protocol // dammgo labs // v0.1.0
+				</p>
+			</div>
+			<div class="text-right">
+				<div class="flex items-center gap-3 justify-end mb-2">
+					<div class="w-2 h-2 rounded-full bg-bos-pink animate-pulse"></div>
+					<p class="font-mono text-bos-pink text-[10px] tracking-widest">SIGNAL: STEADY</p>
+				</div>
+				<p class="font-mono text-white/20 text-[10px]">AUTH_CORE: VERIFIED</p>
+			</div>
+		</header>
+
+		<main class="space-y-48">
+			
+			<!-- SECCIÓN 05: PROTOCOLOS DE CAPTURA (Sovereign Inputs) -->
+			<section>
+				<div class="flex items-center gap-4 mb-12">
+					<span class="text-bos-pink font-mono text-xs">05</span>
+					<h2 class="text-authority text-2xl tracking-widest">sovereign_inputs</h2>
+					<span class="h-px flex-1 bg-gradient-to-r from-bos-pink/50 to-transparent"></span>
+					<span class="font-mono text-[10px] text-bos-gray uppercase">Status: Capturing_Data</span>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+					
+					<!-- CAMPOS DE TEXTO Y SELECCIÓN -->
+					<div class="space-y-12">
+						<div class="space-y-4">
+							<label class="block font-mono text-[10px] text-bos-gray uppercase tracking-widest">Director_Identification</label>
+							<input type="text" class="bos-input w-full" placeholder="Enter Credential ID..." />
+						</div>
+
+						<div class="space-y-4">
+							<label class="block font-mono text-[10px] text-bos-gray uppercase tracking-widest">Operational_Status</label>
+							<div class="flex gap-8">
+								<label class="flex items-center gap-3 cursor-pointer group">
+									<input type="radio" name="status" class="bos-radio" checked />
+									<span class="font-mono text-xs opacity-50 group-hover:opacity-100 transition-opacity">ACTIVE_NODE</span>
+								</label>
+								<label class="flex items-center gap-3 cursor-pointer group">
+									<input type="radio" name="status" class="bos-radio" />
+									<span class="font-mono text-xs opacity-50 group-hover:opacity-100 transition-opacity">MAINTENANCE</span>
+								</label>
+							</div>
+						</div>
+
+						<div class="space-y-4">
+							<label class="flex items-center gap-3 cursor-pointer group">
+								<input type="checkbox" class="bos-checkbox" />
+								<span class="font-mono text-xs opacity-50 group-hover:opacity-100 transition-opacity uppercase">Encrypt_Data_Payload</span>
+							</label>
+						</div>
+					</div>
+
+					<!-- SELECTOR DE FECHA (Vector Temporal) -->
+					<div class="space-y-4">
+						<label class="block font-mono text-[10px] text-bos-gray uppercase tracking-widest">Temporal_Vector_Lock</label>
+						<div class="bos-surface p-6">
+							<div class="flex justify-between items-center mb-6 border-b border-white/5 pb-4">
+								<span class="font-brand font-black text-xl">FEBRUARY 2026</span>
+								<div class="flex gap-2">
+									<button class="w-8 h-8 border border-white/10 flex items-center justify-center hover:bg-bos-pink transition-colors">←</button>
+									<button class="w-8 h-8 border border-white/10 flex items-center justify-center hover:bg-bos-pink transition-colors">→</button>
+								</div>
+							</div>
+							<div class="grid grid-cols-7 gap-2 text-center mb-4">
+								{['S','M','T','W','T','F','S'].map(d => <span class="font-mono text-[10px] text-bos-pink opacity-50">{d}</span>)}
+							</div>
+							<div class="grid grid-cols-7 gap-2">
+								{Array.from({length: 28}).map((_, i) => (
+									<button class={`aspect-square flex items-center justify-center font-mono text-xs border border-transparent hover:border-bos-pink transition-all ${i === 15 ? 'precision-bracket text-bos-pink' : 'opacity-40'}`}>
+										{i + 1}
+									</button>
+								))}
+							</div>
+							<div class="mt-6 synapse-line"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- (Resto de los protocolos anteriores se mantienen para referencia...) -->
+			<section class="opacity-30 grayscale pointer-events-none">
+				<h2 class="text-authority text-sm mb-4">Existing_Protocols_Archive</h2>
+				<p class="font-mono text-[10px]">ERPBSG_HUB // DAMMGO_CORP // VENA_CORE // KODE_REBOOT</p>
+			</section>
+
+		</main>
+
+		<footer class="mt-48 border-t border-white/5 py-12 flex justify-between items-center">
+			<p class="font-mono text-[10px] text-bos-gray tracking-[0.5em]">
+				DAMMGO LABS // 2026 // SOVEREIGN_INFRASTRUCTURE
+			</p>
+		</footer>
+
+		<style is:global>
+			@keyframes scan {
+				from { transform: translateY(-100%); }
+				to { transform: translateY(500px); }
+			}
+			::-webkit-scrollbar { width: 4px; }
+			::-webkit-scrollbar-track { background: #020617; }
+			::-webkit-scrollbar-thumb { background: #E91E63; }
+		</style>
+	</body>
+</html>
