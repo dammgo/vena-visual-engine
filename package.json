@@ -28,6 +28,9 @@
     "tailwind",
     "dammgo"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "unocss",
     "build": "unocss build && tsc",
