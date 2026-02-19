@@ -64,6 +64,10 @@ export const presetVena = definePreset((options: VenaOptions = {}) => {
       ['erpbsg-button', 'px-10 py-5 rounded-bos-sm bg-bos-pink text-bos-white font-brand font-900 uppercase tracking-[0.3em] text-[10px] hover:bg-bos-white hover:text-bos-pink transition-all duration-500 shadow-2xl relative overflow-hidden'],
       ['erpbsg-gradient-text', 'text-transparent bg-clip-text bg-gradient-to-r from-bos-pink to-bos-indigo'],
       
+      // --- MODOS ESPECIALES (COMPACT) ---
+      ['erpbsg-input-compact', 'px-4 py-2 text-xs'],
+      ['erpbsg-button-compact', 'px-6 py-3 text-[9px]'],
+      
       // --- PROTOCOLO: vena ---
       ['vena-monitor', 'bg-black border-[0.5px] border-bos-cobalt/20 p-4 font-mono text-[11px] text-bos-cobalt/80'],
       ['vena-pulse-line', 'h-[1px] bg-bos-cobalt/10 relative overflow-hidden after:content-[""] after:absolute after:inset-0 after:bg-bos-cobalt after:animate-scan'],
