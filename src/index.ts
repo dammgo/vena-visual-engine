@@ -1,6 +1,16 @@
 import { definePreset, presetUno, presetWebFonts } from 'unocss'
 
-export const presetVena = definePreset(() => {
+export interface VenaOptions {
+  /**
+   * Protocolo visual a activar.
+   * @default 'erpbsg'
+   */
+  protocol?: 'erpbsg' | 'dammgo' | 'vena' | 'kode-reboot'
+}
+
+export const presetVena = definePreset((options: VenaOptions = {}) => {
+  const protocol = options.protocol || 'erpbsg'
+
   return {
     name: '@dammgo/vena-visual-engine',
     theme: {
@@ -8,27 +18,27 @@ export const presetVena = definePreset(() => {
         bos: {
           slate: '#020617',
           pink: '#E91E63',
+          indigo: '#818cf8',
           white: '#f8fafc',
           gray: '#94a3b8',
           cobalt: '#00d4ff',
           void: '#0d1117',
-          surface: '#161b22', // Absorbido de vena-pulse docs
-          armor: '#30363d',   // Absorbido de vena-pulse docs
+          surface: '#161b22',
+          armor: '#30363d',
+          success: '#10b981',
+          warning: '#f59e0b',
+          error: '#ef4444',
         },
-        // Mapeo de compatibilidad para evitar roturas
-        void: '#0d1117',
-        cobalt: '#00d4ff',
-        armor: '#30363d',
-        muted: '#8b949e',
+        // Protocolo: kode.reboot (The Lab)
+        matrix: {
+          green: '#00FF41',
+          dark: '#0D0208',
+        }
       },
       borderRadius: {
-        'bos-sm': '2px',
-        'bos-md': '4px',
-        'bos-lg': '6px',
-      },
-      // PUNTO FINO: Curva de animación oficial del BOS
-      easing: {
-        'bos-pulse': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'bos-sm': protocol === 'kode-reboot' ? '0px' : '2px',
+        'bos-md': protocol === 'kode-reboot' ? '0px' : '4px',
+        'bos-lg': protocol === 'kode-reboot' ? '0px' : '6px',
       }
     },
     presets: [
@@ -43,22 +53,35 @@ export const presetVena = definePreset(() => {
       }),
     ],
     shortcuts: [
+      // --- CAPA CORE (FUNDAMENTOS) ---
       ['bos-surface', 'bg-bos-surface/40 backdrop-blur-md border border-bos-armor/30 rounded-bos-sm shadow-none'],
       ['precision-bracket', 'relative before:content-[""] before:absolute before:-top-1 before:-left-1 before:w-2 before:h-2 before:border-t-1 before:border-l-1 before:border-bos-pink after:content-[""] after:absolute after:-bottom-1 after:-right-1 after:w-2 after:h-2 after:border-b-1 after:border-r-1 after:border-bos-pink'],
       ['infra-grid', 'relative before:content-[""] before:absolute before:inset-0 before:opacity-0 before:pointer-events-none before:[background-image:radial-gradient(#f8fafc_1px,transparent_1px)] before:[background-size:10px_10px] focus-within:before:opacity-10 before:transition-opacity'],
       ['synapse-line', 'h-1 bg-white/5 relative overflow-hidden after:content-[""] after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-bos-pink after:to-transparent after:animate-pulse'],
-      ['text-authority', 'font-brand font-black uppercase tracking-widest text-bos-white'],
       
-      // PROTOCOLO: Cinematic Loading (Radar Sweep)
-      ['bos-loader', 'relative overflow-hidden before:content-[""] before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-bos-cobalt/20 before:to-transparent before:animate-scan'],
+      // --- PROTOCOLO: erpbsg (Business Wow) ---
+      ['erpbsg-card', 'bos-surface p-6 hover:border-bos-pink/30 transition-all duration-500'],
+      ['erpbsg-input', 'w-full bg-bos-white border border-white/10 rounded-bos-sm px-6 py-4 text-bos-slate font-bold placeholder:text-bos-slate/30 focus:outline-none focus:ring-4 focus:ring-bos-pink/10 transition-all'],
+      ['erpbsg-button', 'px-10 py-5 rounded-bos-sm bg-bos-pink text-bos-white font-brand font-900 uppercase tracking-[0.3em] text-[10px] hover:bg-bos-white hover:text-bos-pink transition-all duration-500 shadow-2xl'],
+      ['erpbsg-gradient-text', 'text-transparent bg-clip-text bg-gradient-to-r from-bos-pink to-bos-indigo'],
       
-      // Inputs Soberanos
-      ['bos-input', 'bos-surface infra-grid px-4 py-3 font-mono text-sm bg-transparent outline-none focus:precision-bracket transition-all placeholder:opacity-20'],
-      ['bos-checkbox', 'w-4 h-4 border border-white/20 rounded-bos-sm bg-white/5 appearance-none cursor-pointer checked:bg-bos-pink checked:border-bos-pink checked:shadow-[0_0_10px_rgba(233,30,99,0.5)] transition-all'],
-      ['bos-radio', 'w-4 h-4 border border-white/20 rounded-full bg-white/5 appearance-none cursor-pointer checked:border-bos-pink transition-all relative after:content-[""] after:absolute after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:w-0 after:h-0 checked:after:w-2 checked:after:h-2 after:bg-bos-pink after:rounded-full after:transition-all'],
+      // --- PROTOCOLO: vena (Intelligence) ---
+      ['vena-monitor', 'bg-black border-[0.5px] border-bos-cobalt/20 p-4 font-mono text-[11px] text-bos-cobalt/80'],
+      ['vena-pulse-line', 'h-[1px] bg-bos-cobalt/10 relative overflow-hidden after:content-[""] after:absolute after:inset-0 after:bg-bos-cobalt after:animate-scan'],
+      
+      // --- PROTOCOLO: kode-reboot (The Lab) ---
+      ['kode-terminal', 'bg-matrix-dark border border-matrix-green/30 p-8 font-mono text-matrix-green shadow-[0_0_20px_rgba(0,255,65,0.1)]'],
+      ['kode-button', 'px-6 py-3 border border-matrix-green text-matrix-green font-mono uppercase tracking-widest hover:bg-matrix-green hover:text-matrix-dark transition-all'],
+
+      // --- TIPOGRAFÍA DE AUTORIDAD (Global) ---
+      ['bos-title-hero', 'font-brand font-900 text-5xl md:text-7xl lg:text-8xl tracking-tighter uppercase leading-[0.85] text-bos-white'],
+      ['bos-title-terminal', 'font-brand font-900 text-4xl md:text-6xl tracking-tighter uppercase leading-none text-bos-white'],
+      ['bos-title-section', 'font-brand font-900 text-[10px] text-bos-gray uppercase tracking-[0.4em] opacity-40'],
     ],
     rules: [
       ['animate-scan', { animation: 'scan 2s linear infinite' }],
     ],
   }
 })
+
+export default presetVena
