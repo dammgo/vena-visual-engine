@@ -1,6 +1,6 @@
 {
   "name": "@dammgo/vena-visual-engine",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "The Sovereign Visual Engine. A rebellion against generic AI-generated interfaces, built for infrastructure longevity.",
   "type": "module",
   "main": "./dist/index.js",
@@ -42,12 +42,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "unocss": "^65.0.0"
+    "unocss": ">=65.0.0"
   },
   "devDependencies": {
-    "@unocss/astro": "^65.4.3",
+    "@unocss/astro": "^66.6.0",
     "astro": "^5.17.1",
-    "unocss": "^65.4.3",
+    "unocss": "^66.6.0",
     "typescript": "^5.7.3"
   }
 }
