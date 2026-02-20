@@ -1,5 +1,5 @@
 import { definePreset } from 'unocss'
-import { coreTheme, coreShortcuts, corePresets } from './core'
+import { coreTheme, coreShortcuts, corePresets, realityPreflights } from './core'
 import { erpbsgShortcuts, erpbsgPreflights, erpbsgTheme } from './protocols/erpbsg'
 import { dammgoShortcuts } from './protocols/dammgo'
 import { venaShortcuts, venaRules } from './protocols/vena'
@@ -37,7 +37,7 @@ export const presetVena = definePreset((options: VenaOptions = {}) => {
 
   const typographyShortcuts = [
     // Triple Vertical Shielding Protocol (Altitude-Aware)
-    ['bos-title-hero', 'font-brand font-900 text-5xl lg:text-6xl font-black tracking-tighter uppercase leading-[0.9] text-bos-white [@media(min-height:600px)]:text-6xl [@media(min-height:600px)]:xl:text-7xl [@media(min-height:850px)]:text-8xl [@media(min-height:1000px)]:text-[9.5rem]'],
+    ['bos-title-hero', 'font-brand font-900 font-black tracking-tighter uppercase leading-[0.9] text-bos-white [font-size:calc(var(--vve-u-font)*5)] [@media(min-height:850px)]:[font-size:calc(var(--vve-u-font)*7)] [@media(min-height:1000px)]:[font-size:calc(var(--vve-u-font)*9)]'],
     ['bos-title-terminal', 'font-brand font-900 text-4xl md:text-6xl tracking-tighter uppercase leading-none text-bos-white'],
     ['bos-title-section', 'font-brand font-900 text-[10px] text-bos-gray uppercase tracking-[0.4em] opacity-40'],
   ]
@@ -47,8 +47,13 @@ export const presetVena = definePreset((options: VenaOptions = {}) => {
     vena: venaRules,
   }
 
-  // --- 4. PREFLIGHT INJECTION ---
-  const preflights: any[] = []
+  // --- 4. PREFLIGHT INJECTION (THE REALITY ENGINE) ---
+  const preflights: any[] = [
+    {
+      getCSS: () => realityPreflights // Global Reality Variables
+    }
+  ]
+
   if (protocol === 'erpbsg') {
     preflights.push({
       getCSS: () => erpbsgPreflights

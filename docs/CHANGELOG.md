@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [0.3.0-alpha.1] - 2026-02-20
+
+### Added
+- **Reality-Aware Infrastructure:** Initial implementation of VENA Reality Categories (VRC).
+- **Elastic Units:** Introduced `--vve-u-font` and `--vve-u-gap` dynamic multipliers.
+- **Elastic Preflights:** Global injection of App, Content, and Landing reality profiles.
+- **Protocol Elasticity:** Refactored `erpbsg` protocol to consume VENA Units, making its components height-sensitive by default.
+
+---
+
 ## [0.2.7] - 2026-02-20
 
 ### Fixed

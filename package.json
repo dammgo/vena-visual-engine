@@ -1,7 +1,7 @@
 {
   "name": "@dammgo/vena-visual-engine",
-  "version": "0.2.7",
-  "description": "The Sovereign Visual Engine. A rebellion against generic AI-generated interfaces, built for infrastructure longevity.",
+  "version": "0.3.0-alpha.1",
+  "description": "The Sovereign Visual Engine. Reality-Aware Infrastructure for the erpbsg ecosystem.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
