@@ -1,6 +1,6 @@
 {
   "name": "@dammgo/vena-visual-engine",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "The Sovereign Visual Engine. A rebellion against generic AI-generated interfaces, built for infrastructure longevity.",
   "type": "module",
   "main": "./dist/index.js",
@@ -36,7 +36,7 @@
   },
   "scripts": {
     "dev": "unocss",
-    "build": "unocss build && tsc",
+    "build": "tsc",
     "showroom:dev": "astro dev --root showroom",
     "showroom:build": "astro build --root showroom",
     "test": "echo \"Error: no test specified\" && exit 1"

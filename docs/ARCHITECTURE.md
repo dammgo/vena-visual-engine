@@ -26,8 +26,11 @@ This is the "Reset of Authority". Based on the protocol, the factory injects glo
 - **Application Reality:** Injects `height: 100vh` and `overflow: hidden` to the root.
 - **Content Reality:** Injects optimized line-heights and scrolling behaviors.
 
-### C. Shortcut Assembly
-It aggregates the Core shortcuts with the selected Protocol shortcuts to build the final UnoCSS array.
+### C. Rule Assembly (Animation DNA)
+VVE v0.2.2 introduced **Rule Sovereignty**. Custom CSS rules (e.g., keyframes, specialized animations like `animate-scan`) are no longer global. They are defined within each protocol slice and assembled only when that protocol is active.
+
+### D. Shortcut Assembly
+It aggregates the Core shortcuts with the selected Protocol shortcuts and the **Altitude-Aware Typography** to build the final UnoCSS array.
 
 ---
 
@@ -37,7 +40,8 @@ It aggregates the Core shortcuts with the selected Protocol shortcuts to build t
 2. **Registry Lookup:** Factory finds the `erpbsg.ts` slice.
 3. **Reset Application:** Preflights for "Application Reality" are queued.
 4. **Altitude Check:** The **Triple Vertical Shielding** logic is integrated into the typography shortcuts.
-5. **Output:** A fully compiled UnoCSS Preset ready for consumption.
+5. **Logic Merge:** Brand-specific rules (animations) are merged into the preset.
+6. **Output:** A fully compiled UnoCSS Preset ready for consumption.
 
 ---
 **dammgo labs** - _Engineering Longevity._

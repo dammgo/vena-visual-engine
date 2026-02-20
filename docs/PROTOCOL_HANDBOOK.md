@@ -32,6 +32,10 @@ Defines global styles to be injected into the `root` when this protocol is activ
 - **App Mode:** `overflow: hidden`, `height: 100vh`.
 - **Content Mode:** Optimized `line-height`, specific `font-family`.
 
+### D. Rules (Logic)
+Defines custom CSS rules and keyframes (e.g., `animate-scan`).
+**Rule:** Use the brand prefix for rules to prevent global collisions.
+
 ---
 
 ## 3. Development Process (The Flow)
