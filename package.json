@@ -1,6 +1,6 @@
 {
   "name": "@dammgo/vena-visual-engine",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "The Sovereign Visual Engine. A rebellion against generic AI-generated interfaces, built for infrastructure longevity.",
   "type": "module",
   "main": "./dist/index.js",

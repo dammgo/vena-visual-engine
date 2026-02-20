@@ -1,0 +1,43 @@
+# VVE Architecture: The Sovereign Factory
+
+This document describes the internal engineering of **VENA Visual Engine**. The engine is designed as a **Multi-Protocol Factory** that generates a tailored UnoCSS configuration based on the target project's reality.
+
+---
+
+## 1. The Core (DNA)
+The Core resides in `src/core/` and contains the "Sacred Constants" shared by all protocols:
+- **Signature Elements:** Components like `precision-bracket` and `infra-grid` that define the dammgo labs aesthetic.
+- **Base Tokens:** The primary color palette (Slate, Pink, Cobalt) and typography (Montserrat, Inter, JetBrains Mono).
+
+## 2. The Protocol Slices
+Starting from v0.2.0, each brand/project has its own **Slice** in `src/protocols/`.
+- Each slice is an independent module containing its own component shortcuts and theme overrides.
+- This prevents "DNA Bleed" where a change in the Hub affects a Landing page.
+
+## 3. The Factory (Context Awareness)
+The `presetVena` function acts as a factory. It receives a configuration object and performs the following:
+
+### A. Theme Merging
+It merges the Core tokens with the Protocol-specific tokens. 
+*Example:* It sets `borderRadius: 0px` for `kode-reboot` while keeping `2px` for `erpbsg`.
+
+### B. Preflight Injection
+This is the "Reset of Authority". Based on the protocol, the factory injects global CSS:
+- **Application Reality:** Injects `height: 100vh` and `overflow: hidden` to the root.
+- **Content Reality:** Injects optimized line-heights and scrolling behaviors.
+
+### C. Shortcut Assembly
+It aggregates the Core shortcuts with the selected Protocol shortcuts to build the final UnoCSS array.
+
+---
+
+## 4. Execution Flow
+
+1. **Input:** `{ protocol: 'erpbsg' }`
+2. **Registry Lookup:** Factory finds the `erpbsg.ts` slice.
+3. **Reset Application:** Preflights for "Application Reality" are queued.
+4. **Altitude Check:** The **Triple Vertical Shielding** logic is integrated into the typography shortcuts.
+5. **Output:** A fully compiled UnoCSS Preset ready for consumption.
+
+---
+**dammgo labs** - _Engineering Longevity._
