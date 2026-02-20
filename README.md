@@ -1,31 +1,31 @@
 # VENA Visual Engine 🚀
 
-> **"Engineering as Art. Sovereignty as Standard."**
+> **"Reality-Aware Infrastructure. Engineering as Art."**
 
 [![Version](https://img.shields.io/npm/v/@dammgo/vena-visual-engine?color=E91E63&label=VVE)](https://www.npmjs.com/package/@dammgo/vena-visual-engine)
 [![License](https://img.shields.io/npm/l/@dammgo/vena-visual-engine?color=00d4ff)](https://github.com/dammgo/vena-visual-engine/blob/main/LICENSE)
 
 ## 🧬 The Manifesto
 
-The web has been colonized by the generic. AI-generated interfaces have commoditized "good taste," filling our screens with predictable shadows, rounded corners, and a lack of character. 
+The web has been colonized by the generic. **VENA Visual Engine (VVE)** is a rebellion. It is not another CSS framework for "friendly" apps. It is a **Sovereign Infrastructure** for building digital interfaces that reflect precision, authority, and longevity. 
 
-**VENA Visual Engine (VVE)** is a rebellion. It is not another CSS framework for "friendly" apps. It is a **Sovereign Infrastructure** for building digital interfaces that reflect precision, authority, and longevity. We don't build "UI components"; we build **Visual Protocols**.
+Starting from **v0.3.0**, VVE evolves from a static preset to a **Reality-Aware Engine** that understands the observer's environment and the developer's intention.
 
 ---
 
 ## 🏛️ Axioms of the Engine
 
-1.  **Precision over Organic:** We reject the "round-everything" culture. Surfaces should feel like precision-cut steel.
-2.  **Hardware Awareness:** Altitude-conscious design. We optimize for the screen where the work happens (Laptops), not just the desk where we design (2K/4K).
-3.  **Context Sovereignty:** The engine differentiates between Application, Landing, and Laboratory realities, injecting specific infrastructure resets for each.
-4.  **The Active Pulse:** Interfaces are live signals. We treat the rendering process as a vital pulse of data.
+1.  **Holistic Responsiveness:** We don't just look at width. We look at **Intention** and **Altitude**. Components shrink and expand based on the total available surface area (Width + Height).
+2.  **The Reality Categories (VRC):** The engine differentiates between **App**, **Content**, and **Landing** realities, injecting specific mathematical formulas for typography and spacing in each.
+3.  **Layout Sovereignty:** VVE provides the **DNA (The Skin)**, but the **Page owns the Skeleton**. Structural positioning (Flex, Grid, Height) remains local to ensure perfect compiler visibility and flexibility.
+4.  **Precision over Organic:** We reject the "round-everything" culture. Surfaces should feel like precision-cut steel, calibrated for professional hardware.
 
 ---
 
 ## 🛠️ Installation
 
 ```bash
-npm install @dammgo/vena-visual-engine unocss
+npm install @dammgo/vena-visual-engine@alpha unocss
 ```
 
 ## 📡 Quick Start (UnoCSS)
@@ -43,8 +43,26 @@ export default defineConfig({
       protocol: 'erpbsg' // Options: 'erpbsg' | 'dammgo' | 'vena' | 'kode-reboot'
     }),
   ],
+  content: {
+    pipeline: {
+      include: [
+        'src/**/*.{js,ts,jsx,tsx}',
+        'node_modules/@dammgo/vena-visual-engine/dist/**/*.js', // Required for Shortcut resolution
+      ],
+    },
+  },
 })
 ```
+
+---
+
+## 🎭 Activating Realities
+
+To use the elastic units of VVE, wrap your container with a **Reality Class**:
+
+- **`.vve-reality-app`**: Prioritizes height. Ideal for Logins/Dashboards. Everything fits in 600px altitude.
+- **`.vve-reality-content`**: Prioritizes width and readability. Ideal for Documentation/Blogs.
+- **`.vve-reality-landing`**: Prioritizes monumental impact. Ideal for Marketing.
 
 ---
 
@@ -52,11 +70,12 @@ export default defineConfig({
 
 Detailed guides for our sovereign syntax:
 
-- [**Architecture Blueprint**](./docs/ARCHITECTURE.md): Understand the factory and the DNA injection.
-- [**VVE Specification**](./docs/VVE_SPECIFICATION.md): The three realities (App, Landing, Blog).
-- [**Protocol Handbook**](./docs/PROTOCOL_HANDBOOK.md): How to register and build a new visual identity.
-- [**Visual Philosophy**](./docs/PHILOSOPHY.md): The ergonomic and aesthetic ethics of the engine.
+- [**Architecture Blueprint**](./docs/ARCHITECTURE.md): The multi-protocol factory and the Elastic Root.
+- [**Reality Manual**](./docs/REALITY_MANUAL.md): How to implement intentions and use VENA Units.
+- [**Technical Specification**](./docs/SPECIFICATION.md): The mathematical formulas behind VRC.
+- [**Protocol Handbook**](./docs/PROTOCOL_HANDBOOK.md): Registering and building new brand identities.
+- [**Changelog**](./docs/CHANGELOG.md): Tracking the visual revolution.
 
 ---
-**dammgo labs** - _Engineering Longevity._
+**dammgo labs** - _Engineering Reality._
 © 2026. Distributed under the MIT License.
