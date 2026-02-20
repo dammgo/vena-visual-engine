@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [0.2.7] - 2026-02-20
+
+### Fixed
+- **Systemic Layout Sanitization:** Purged all structural utilities (`flex`, `grid`, `h-screen`, `w-full`) from all protocols (`erpbsg`, `dammgo`, `vena`, `lab`). The Page is now the sole owner of positioning (Layout Sovereignty Rule).
+- **Typography Safety:** Capped `erpbsg-title-access` at `text-4xl` to prevent vertical overflows in 600px altitude viewports.
+- **Margin Cleanup:** Removed all hardcoded external margins (`mb-10`, `mb-12`) from components to allow frictionless contextual placement.
+
+---
+
 ## [0.2.2] - 2026-02-20
 
 ### Added

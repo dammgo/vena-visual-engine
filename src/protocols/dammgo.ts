@@ -1,3 +1,5 @@
 export const dammgoShortcuts = [
-  ['dammgo-hero', 'font-brand font-900 text-8xl md:text-[12rem] tracking-tighter uppercase leading-[0.8]'],
+  // --- IDENTIDAD CORP (ADN PURO) ---
+  // Se elimina la escala tipográfica absoluta para permitir control local en Landings.
+  ['dammgo-hero', 'font-brand font-900 tracking-tighter uppercase leading-[0.8]'],
 ]

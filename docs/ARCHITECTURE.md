@@ -34,7 +34,24 @@ It aggregates the Core shortcuts with the selected Protocol shortcuts and the **
 
 ---
 
-## 4. Execution Flow
+## 4. The Layout Sovereignty Rule (Strict Constraint)
+
+VVE strictly distinguishes between **DNA (The Skin)** and **Layout (The Skeleton)**. As of v0.2.7, the engine has been purged of all structural positioning utilities.
+
+### DNA belongs to VVE:
+Shortcuts for components (Buttons, Inputs, Cards, Typography) MUST live in VVE. This ensures brand consistency, semantic authority, and cinematic textures.
+
+### Layout belongs to the Page:
+Positioning utilities (`flex`, `grid`, `flex-row`, `h-screen`, `w-full`, `margins`, `paddings-external`) MUST remain in the project's local source code (`.tsx`).
+
+**Key Engineering Reasons:**
+1. **Scanner Visibility:** CSS engines (UnoCSS/Tailwind) need to see responsive breakpoints (e.g., `md:`, `lg:`) in the local source to compile them correctly. Shortcuts in `node_modules` are often invisible to local responsive scanners.
+2. **Altitude Awareness:** Layout is height-dependent. A design that works at 1080px height might fail at 600px. VVE cannot predict the "altitude" of the viewport; only the Page can respond to it.
+3. **Zero Opinion Policy:** VVE provides the luxury parts, but it should not "dictate" how the room is furnished. Keeping layout local prevents developers from having to "fight" the engine to achieve specific design goals.
+
+---
+
+## 5. Execution Flow
 
 1. **Input:** `{ protocol: 'erpbsg' }`
 2. **Registry Lookup:** Factory finds the `erpbsg.ts` slice.

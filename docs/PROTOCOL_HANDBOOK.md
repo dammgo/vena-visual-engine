@@ -49,7 +49,10 @@ Defines custom CSS rules and keyframes (e.g., `animate-scan`).
 
 ## 4. Blacklist (Prohibitions)
 
+- **Prohibited:** Including structural positioning utilities (`flex`, `grid`, `flex-row`, `h-screen`, `w-full`) in shortcuts. Layout belongs to the Page.
+- **Prohibited:** Including large external margins (`mb-10`, `mb-12`) in component shortcuts. Use local spacing for context.
 - **Prohibited:** Using absolute pixel values for spacing (use the `rem` scale).
+- **Prohibited:** Defining extreme typography scales (e.g., `text-8xl`) without a controlled fallback or local override.
 - **Prohibited:** Injecting external fonts outside the `WebFonts` preset.
 - **Prohibited:** Modifying `src/core/` to solve a brand-specific problem.
 
