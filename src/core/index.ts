@@ -7,6 +7,12 @@ import { presetUno, presetWebFonts } from 'unocss'
 
 export const coreTheme = {
   colors: {
+    // --- SOVEREIGN TOKENS (Direct Access) ---
+    void: '#030712',      // Negro abisal (Sovereign Base)
+    cobalt: '#00d4ff',    // VENA Intelligence (Cyan Electric)
+    armor: '#1e293b',     // Gris blindaje (Border/Infrastructure)
+    
+    // --- LEGACY NAMESPACE (BOS) ---
     bos: {
       slate: '#020617',
       pink: '#E91E63',
@@ -48,6 +54,10 @@ export const coreShortcuts = [
   ['precision-bracket', 'relative before:content-[""] before:absolute before:-top-1 before:-left-1 before:w-2 before:h-2 before:border-t-1 before:border-l-1 before:border-bos-pink after:content-[""] after:absolute after:-bottom-1 after:-right-1 after:w-2 after:h-2 after:border-b-1 after:border-r-1 after:border-bos-pink'],
   ['infra-grid', 'relative before:content-[""] before:absolute before:inset-0 before:opacity-0 before:pointer-events-none before:[background-image:radial-gradient(#f8fafc_1px,transparent_1px)] before:[background-size:10px_10px] focus-within:before:opacity-10 before:transition-opacity'],
   ['synapse-line', 'h-1 bg-white/5 relative overflow-hidden after:content-[""] after:absolute after:inset-0 after:bg-gradient-to-r after:from-transparent after:via-bos-pink after:to-transparent after:animate-pulse'],
+  
+  // --- CINEMATIC SHORCUTS ---
+  ['glass-armor', 'backdrop-blur-md bg-void/10 border border-armor/20'],
+  ['text-glow', 'drop-shadow-[0_0_10px_currentColor]'],
 ]
 
 /**
