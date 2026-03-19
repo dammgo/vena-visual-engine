@@ -1,6 +1,6 @@
 {
   "name": "@dammgo/vena-visual-engine",
-  "version": "0.3.0-alpha.1",
+  "version": "0.3.0-alpha.2",
   "description": "The Sovereign Visual Engine. Reality-Aware Infrastructure for the erpbsg ecosystem.",
   "type": "module",
   "main": "./dist/index.js",
