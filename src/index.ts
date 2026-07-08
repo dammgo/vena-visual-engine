@@ -1,4 +1,4 @@
-import { definePreset } from 'unocss'
+import { definePreset, type Preset, transformerDirectives, transformerVariantGroup, type UserConfig } from 'unocss'
 import { coreTheme, coreShortcuts, corePresets, realityPreflights } from './core'
 import { erpbsgShortcuts, erpbsgPreflights, erpbsgTheme } from './protocols/erpbsg'
 import { dammgoShortcuts } from './protocols/dammgo'
@@ -13,21 +13,17 @@ export interface VenaOptions {
   protocol?: 'erpbsg' | 'dammgo' | 'vena' | 'kode-reboot'
 }
 
-export const presetVena = definePreset((options: VenaOptions = {}) => {
+/**
+ * ATOMIC PRESET: The core DNA of VENA.
+ */
+export const presetVena = definePreset((options: VenaOptions = {}): Preset => {
   const protocol = options.protocol || 'erpbsg'
 
-  // --- 1. THEME ASSEMBLY ---
   const protocolThemes: Record<string, any> = {
     erpbsg: erpbsgTheme,
     'kode-reboot': labTheme,
   }
 
-  const theme = {
-    ...coreTheme,
-    ...(protocolThemes[protocol] || {})
-  }
-
-  // --- 2. SHORTCUT ASSEMBLY ---
   const protocolShortcuts: Record<string, any[]> = {
     erpbsg: erpbsgShortcuts,
     dammgo: dammgoShortcuts,
@@ -36,35 +32,29 @@ export const presetVena = definePreset((options: VenaOptions = {}) => {
   }
 
   const typographyShortcuts = [
-    // Triple Vertical Shielding Protocol (Altitude-Aware)
-    ['bos-title-hero', 'font-brand font-900 font-black tracking-tighter uppercase leading-[0.9] text-bos-white [font-size:calc(var(--vve-u-font)*5)] [@media(min-height:850px)]:[font-size:calc(var(--vve-u-font)*7)] [@media(min-height:1000px)]:[font-size:calc(var(--vve-u-font)*9)]'],
-    ['bos-title-terminal', 'font-brand font-900 text-4xl md:text-6xl tracking-tighter uppercase leading-none text-bos-white'],
-    ['bos-title-section', 'font-brand font-900 text-[10px] text-bos-gray uppercase tracking-[0.4em] opacity-40'],
+    ['bos-title-hero', 'font-brand font-900 font-black tracking-tighter uppercase leading-[0.9] text-white [font-size:calc(var(--vve-u-font)*5)] [@media(min-height:850px)]:[font-size:calc(var(--vve-u-font)*7)] [@media(min-height:1000px)]:[font-size:calc(var(--vve-u-font)*9)]'],
+    ['bos-title-terminal', 'font-brand font-900 text-4xl md:text-6xl tracking-tighter uppercase leading-none text-white'],
+    ['bos-title-section', 'font-brand font-900 text-[10px] text-muted uppercase tracking-[0.4em] opacity-40'],
   ]
 
-  // --- 3. RULE ASSEMBLY ---
   const protocolRules: Record<string, any[]> = {
     vena: venaRules,
   }
 
-  // --- 4. PREFLIGHT INJECTION (THE REALITY ENGINE) ---
   const preflights: any[] = [
-    {
-      getCSS: () => realityPreflights // Global Reality Variables
-    }
+    { getCSS: () => realityPreflights }
   ]
 
   if (protocol === 'erpbsg') {
-    preflights.push({
-      getCSS: () => erpbsgPreflights
-    })
+    preflights.push({ getCSS: () => erpbsgPreflights })
   }
 
-  // --- 5. FINAL FACTORY OUTPUT ---
   return {
     name: '@dammgo/vena-visual-engine',
-    theme,
-    presets: corePresets,
+    theme: {
+      ...coreTheme,
+      ...(protocolThemes[protocol] || {})
+    },
     shortcuts: [
       ...coreShortcuts,
       ...(protocolShortcuts[protocol] || []),
@@ -76,5 +66,21 @@ export const presetVena = definePreset((options: VenaOptions = {}) => {
     preflights,
   }
 })
+
+/**
+ * HOLISTIC CONFIG: Zero-Config entry point for projects.
+ */
+export const defineVenaConfig = (options: VenaOptions = {}): UserConfig => {
+  return {
+    presets: [
+      ...corePresets,
+      presetVena(options)
+    ],
+    transformers: [
+      transformerDirectives(),
+      transformerVariantGroup(),
+    ]
+  }
+}
 
 export default presetVena

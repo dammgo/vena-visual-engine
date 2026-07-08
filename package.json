@@ -35,11 +35,11 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "unocss",
+    "dev": "unocss --config showroom/uno.config.ts",
     "build": "tsc",
     "showroom:dev": "astro dev --root showroom",
     "showroom:build": "astro build --root showroom",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run"
   },
   "peerDependencies": {
     "unocss": ">=65.0.0"
@@ -47,7 +47,8 @@
   "devDependencies": {
     "@unocss/astro": "^66.6.0",
     "astro": "^5.17.1",
+    "typescript": "^5.7.3",
     "unocss": "^66.6.0",
-    "typescript": "^5.7.3"
+    "vitest": "^4.1.0"
   }
 }
