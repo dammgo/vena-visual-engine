@@ -20,7 +20,7 @@
   "homepage": "https://kr.dammgo.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dammgo/vena-visual-engine"
+    "url": "https://github.com/vena-core/vena-visual-engine"
   },
   "keywords": [
     "css",
